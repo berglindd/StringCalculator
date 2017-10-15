@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rm -r Classes/*
+rm	-r	classes/*
