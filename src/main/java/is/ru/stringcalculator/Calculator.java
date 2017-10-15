@@ -5,12 +5,21 @@ public class Calculator {
 		if (text.equals(""))
 			return 0;
 		else {
-			if (text.contains(",") || text.contains("\n")) {
-				String [] numbers = text.split(",|\n");
-				return getSum(numbers);
+			try {
+				if (text.contains(",") || text.contains("\n")) {
+					String [] numbers = text.split(",|\n");
+					return getSum(numbers);
+				}
+				if (toInt(text) < 0) {
+					throw new CalculatorException("Negatives not allowed: " + text);
+				}
+				return toInt(text);
 			}
-			return toInt(text);
+			catch (CalculatorException ex) {
+				System.out.println(ex.getMessage());
+			}
 		}
+		return -1;
 	}
 
 	private static int toInt (String number) {

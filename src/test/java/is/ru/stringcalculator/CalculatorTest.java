@@ -38,4 +38,9 @@ public class CalculatorTest {
 	public void testNewLineAndComma() {
 		assertEquals(6, Calculator.add("1\n2,3"));
 	}
+
+	@Test
+	public void testOneNegativeNumber() {
+		assertEquals(-1, Calculator.add("-1"));
+	}
 }
