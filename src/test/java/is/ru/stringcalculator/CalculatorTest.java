@@ -63,4 +63,9 @@ public class CalculatorTest {
 	public void testDifferentDelimeter() {
 		assertEquals(3, Calculator.add("//:\n1:2"));
 	}
+
+	@Test
+	public void testDifferentDelimeterAndNewLine() {
+		assertEquals(6, Calculator.add("//:\n1:2\n3"));
+	}
 }
