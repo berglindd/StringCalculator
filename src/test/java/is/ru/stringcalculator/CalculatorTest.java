@@ -58,4 +58,9 @@ public class CalculatorTest {
 	public void testBigNumbers() {
 		assertEquals(3, Calculator.add("1,1001,2"));
 	}
+
+	@Test
+	public void testDifferentDelimeter() {
+		assertEquals(3, Calculator.add("//:\n1:2"));
+	}
 }

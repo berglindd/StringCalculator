@@ -6,8 +6,15 @@ public class Calculator {
 			return 0;
 		else {
 			try {
-				if (text.contains(",") || text.contains("\n")) {
-					String [] numbers = text.split(",|\n");
+				String delimeter = ",";
+				if (text.startsWith("//")) {
+					text = text.substring(2);
+					String [] splitString = text.split("\n", 2);
+					delimeter = splitString[0];
+					text = splitString[1];	
+				}
+				if (text.contains(",") || text.contains("\n") || text.contains(delimeter)) {
+					String [] numbers = text.split(",|\n|" + delimeter);
 					String message = getNegatives(numbers);
 
 					if (message != "") {
