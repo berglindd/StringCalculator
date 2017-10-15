@@ -7,18 +7,21 @@ public class Calculator {
 		else 
 			if (text.contains(",")) {
 				String [] numbers = text.split(",");
-
-				int sum = 0;
-
-				for (String number: numbers) {
-					sum += toInt(number);
-				}
-				return sum;
+				return getSum(numbers);
 			}
 			return 1;
 	}
 
 	private static int toInt (String number) {
 		return Integer.parseInt(number);
+	}
+
+	private static int getSum (String [] numbers) {
+		int sum = 0;
+
+		for (String number: numbers) {
+			sum += toInt(number);
+		}
+		return sum;
 	}
 }
