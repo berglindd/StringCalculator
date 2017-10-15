@@ -5,16 +5,8 @@ public class Calculator {
 		if (text.equals(""))
 			return 0;
 		else {
-			if (text.contains(",")) {
-				if (text.contains("\n")) {
-					String [] numbers = text.split(",|\n");
-					return getSum(numbers);
-				}
-				String [] numbers = text.split(",");
-				return getSum(numbers);
-			}
-			else if (text.contains("\n")) {
-				String [] numbers = text.split("\n");
+			if (text.contains(",") || text.contains("\n")) {
+				String [] numbers = text.split(",|\n");
 				return getSum(numbers);
 			}
 			return toInt(text);
