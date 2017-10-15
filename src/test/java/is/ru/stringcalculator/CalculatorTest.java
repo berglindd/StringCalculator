@@ -48,4 +48,14 @@ public class CalculatorTest {
 	public void testMultipleNegativeNumbers() {
 		assertEquals(-1, Calculator.add("-1,2,-3"));
 	}
+
+	@Test
+	public void testBigNumber() {
+		assertEquals(0, Calculator.add("1001"));
+	}
+
+	@Test
+	public void testBigNumbers() {
+		assertEquals(3, Calculator.add("1,1001,2"));
+	}
 }

@@ -15,6 +15,16 @@ public class Calculator {
 						throw new CalculatorException("\nNegatives not allowed: " + message);
 					}
 
+					int counter = 0;
+					for (String number: numbers) {
+						if (toInt(number) > 1000)
+						{
+							numbers[counter] = "0";
+						}
+
+						counter ++;
+					}
+
 					return getSum(numbers);
 				}
 
@@ -23,6 +33,11 @@ public class Calculator {
 				if (theNumber < 0) {
 					throw new CalculatorException("\nNegatives not allowed: " + text);
 				}
+				else if (theNumber > 1000)
+				{
+					return 0;
+				}
+
 				return theNumber;
 			}
 			catch (CalculatorException ex) {
